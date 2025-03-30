@@ -5,6 +5,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: Row(
+          children: [
+            //side bar
+            Container(color: Colors.blueGrey[900]),
+            //dashboard
+            Container(color: Colors.blueGrey[900]),
+            //summary
+            Container(color: Colors.cyanAccent),
+          ],
+        ),
+      ),
+    );
   }
 }
