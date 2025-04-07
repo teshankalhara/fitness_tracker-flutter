@@ -1,3 +1,4 @@
+import 'package:fitness_tracker/widgets/header_widget.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -13,7 +14,7 @@ class _DashboardState extends State<Dashboard> {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Column(children: [Text("Dashboard")]),
+        child: Column(children: [SizedBox(height: 15), HeaderWidget()]),
       ),
     );
   }
