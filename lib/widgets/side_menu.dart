@@ -10,11 +10,13 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
+  int selectedIndex = 0;
   final sideMenuData = SideMenuData();
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 100),
       color: backgroundColor,
       child: ListView.builder(
         itemCount: sideMenuData.sideMenu.length,
@@ -26,14 +28,39 @@ class _SideMenuState extends State<SideMenu> {
   }
 
   Widget _sideMenuList(SideMenuData sideMenuData, int index) {
-    return Row(
-      children: [
-        Icon(sideMenuData.sideMenu[index].icon, color: greyColor),
-        Text(
-          sideMenuData.sideMenu[index].title,
-          style: TextStyle(color: greyColor),
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedIndex = index;
+          //print(selectedIndex);
+        });
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 5),
+        decoration: BoxDecoration(
+          color: selectedIndex == index ? selectionColor : Colors.transparent,
+          borderRadius: BorderRadius.circular(6.0),
         ),
-      ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Icon(
+                sideMenuData.sideMenu[index].icon,
+                color: selectedIndex == index ? blackColor : greyColor,
+              ),
+              SizedBox(width: 20),
+              Text(
+                sideMenuData.sideMenu[index].title,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: selectedIndex == index ? blackColor : greyColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
