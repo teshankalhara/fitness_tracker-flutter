@@ -9,5 +9,6 @@ const selectionColor = Colors.purpleAccent;
 final limeColor = Colors.blueGrey[900];
 const greyColor = Colors.grey;
 const whiteColor = Colors.white;
+const blackColor = Colors.black;
 
 const defaultPadding = 20.0;
