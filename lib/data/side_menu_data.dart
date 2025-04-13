@@ -1,4 +1,4 @@
-import 'package:fitness_tracker/model/side_menu_model.dart';
+import 'package:fitness_tracker/models/side_menu_model.dart';
 import 'package:flutter/material.dart';
 
 class SideMenuData {
