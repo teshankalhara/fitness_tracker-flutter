@@ -73,7 +73,7 @@ class LineChartCard extends StatelessWidget {
                 lineBarsData: [
                   LineChartBarData(
                     color: selectionColor,
-                    barWidth: 3,
+                    barWidth: 2,
                     belowBarData: BarAreaData(
                       show: true,
                       gradient: LinearGradient(
