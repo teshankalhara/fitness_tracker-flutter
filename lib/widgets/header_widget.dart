@@ -1,4 +1,5 @@
 import 'package:fitness_tracker/constant/color.dart';
+import 'package:fitness_tracker/utils/responsive.dart';
 import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -6,8 +7,17 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDesktop = Responsive.isDesktop(context);
+
     return Row(
       children: [
+        if (!isDesktop)
+          IconButton(
+            icon: const Icon(Icons.menu, color: greyColor),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
         Expanded(
           child: TextField(
             style: TextStyle(color: greyColor),
@@ -32,6 +42,13 @@ class HeaderWidget extends StatelessWidget {
             ),
           ),
         ),
+        if (!isDesktop)
+          IconButton(
+            icon: const Icon(Icons.person, color: greyColor),
+            onPressed: () {
+              Scaffold.of(context).openEndDrawer();
+            },
+          ),
       ],
     );
   }
