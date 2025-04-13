@@ -29,6 +29,7 @@ class PieChartSampleData {
       radius: 16,
     ),
     PieChartSectionData(
+      // ignore: deprecated_member_use
       color: primaryColor.withOpacity(0.1),
       value: 25,
       showTitle: false,
